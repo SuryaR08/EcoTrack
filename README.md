@@ -1,14 +1,40 @@
 # MyProject
 
-Welcome to MyProject! This project aims to streamline issue management and profile handling for users and admins. The core functionality includes user registration, login, profile management, and an intuitive interface for handling issues. 
+Welcome to MyProject! This project aims to streamline issue management and profile handling for users and admins. The core functionality includes user registration, login, profile management, and an intuitive interface for handling issues.
 
-Admins have the ability to view and delete all issues, whereas regular users can view only their own issues and create new ones. 
+Admins have the ability to view and delete all issues, whereas regular users can view only their own issues and create new ones.
+
+## Screenshots
+
+### Home Page
+[![Home Page](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(336).png)](https://eco-track-beige.vercel.app/)
+
+### User Dashboard Page
+![User Dashboard](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(340).png)
+
+### Admin Dashboard Page
+![Admin Dashboard](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(330).png)
+![Admin Dashboard](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(334).png)
+
+### Profile Page (User)
+![Profile Page - User](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(343).png)
+![Profile Page - User](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(344).png)
+
+### Profile Page (Admin)
+![Profile Page - Admin](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(335).png)
+
+### My Schedules Page
+![My Schedules](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(341).png)
+![My Schedules](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(342).png)
+
+### Allocate Schedules Page
+![Allocate Schedules](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(329).png)
 
 ## Features
 
 - **User Authentication**: Secure login and registration for users and admins.
 - **Profile Management**: Users can view their profile details and achievements.
-- **Issue Management**: 
+- **Issue Management**:
   - Admins can view and delete any issue.
   - Users can view, create, and manage their own issues.
 - **Responsive Design**: The application is designed to be fully responsive and user-friendly across various devices.
@@ -29,7 +55,7 @@ To get a local copy up and running, follow these simple steps:
 
 - Node.js (v12+)
 - npm (v6+)
-- A SQL database ( MySQL)
+- A SQL database (e.g., PostgreSQL, MySQL)
 
 ### Backend Setup
 
@@ -104,9 +130,22 @@ The frontend application will be available at `http://localhost:3000` and the ba
 - **src/App.js**: Main application component.
 - **src/ProfilePage.css**: Styles for the ProfilePage component.
 
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. **Fork the Project**
+2. **Create your Feature Branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your Changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to the Branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [your-email@example.com](mailto:suryaraja8903@gmail.com)
+Your Name - [suryaraja8903@gmail.com)](mailto:suryaraja8903@gmail.com)
 
-Project Link: [https://github.com/yourusername/myproject](https://eco-track-beige.vercel.app/)
+Project Link: [https://eco-track-beige.vercel.app/](https://eco-track-beige.vercel.app/)
