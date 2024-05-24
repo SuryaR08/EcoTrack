@@ -1,6 +1,6 @@
-# MyProject
+# EcoTrack - Smart Community Waste Management System
 
-Welcome to MyProject! This project aims to streamline issue management and profile handling for users and admins. The core functionality includes user registration, login, profile management, and an intuitive interface for handling issues.
+Welcome to EcoTrack! This project aims to streamline issue management and profile handling for users and admins. The core functionality includes user registration, login, profile management, and an intuitive interface for handling issues.
 
 Admins have the ability to view and delete all issues, whereas regular users can view only their own issues and create new ones.
 
