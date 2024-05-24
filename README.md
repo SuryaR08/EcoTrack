@@ -146,6 +146,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [suryaraja8903@gmail.com)](mailto:suryaraja8903@gmail.com)
+Your Name - [suryaraja8903@gmail.com](mailto:suryaraja8903@gmail.com)
 
 Project Link: [https://eco-track-beige.vercel.app/](https://eco-track-beige.vercel.app/)
