@@ -7,7 +7,7 @@ Admins have the ability to view and delete all issues, whereas regular users can
 ## Screenshots
 
 ### Home Page
-[![Home Page](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(336).png)](https://eco-track-beige.vercel.app/)
+[![Home Page](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(336).png)](https://ecotrack-delta.vercel.app/)
 
 ### User Dashboard Page
 ![User Dashboard](https://github.com/SuryaR08/EcoTrack/blob/main/client/src/img/Screenshot%20(340).png)
