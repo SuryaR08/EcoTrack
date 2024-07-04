@@ -35,17 +35,14 @@ jobs:
         docker build -t surya080903/ecotrack-server:latest -f ./server/Dockerfile ./server
         docker push surya080903/ecotrack-server:latest
 
-    - name: Install dependencies for Minikube and Kubernetes
+    - name: Install dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y apt-transport-https gnupg2 curl
-        sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-        sudo apt-add-repository "deb https://apt.kubernetes.io/ kubernetes-xenial main"
+        curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+        echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
         sudo apt-get update
-        sudo apt-get install -y conntrack
-
-    - name: Install Kubectl
-      run: sudo snap install kubectl --classic
+        sudo apt-get install -y kubectl conntrack
 
     - name: Install Minikube
       run: |
@@ -55,10 +52,10 @@ jobs:
     - name: Install Helm
       run: |
         curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
-        sudo apt-get install apt-transport-https --yes
+        sudo apt-get install -y apt-transport-https
         echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
         sudo apt-get update
-        sudo apt-get install helm
+        sudo apt-get install -y helm
 
     - name: Start Minikube
       run: minikube start --driver=none
