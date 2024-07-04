@@ -74,7 +74,11 @@ jobs:
           sudo apt-get install -y helm
 
       - name: Start Minikube
-        run: minikube start --driver=none --container-runtime=docker
+        run: |
+          curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+          sudo install minikube-linux-amd64 /usr/local/bin/minikube
+          rm minikube-linux-amd64
+          sudo minikube start --driver=none --container-runtime=cri-dockerd
 
       - name: Set up Kubectl
         uses: azure/setup-kubectl@v1
