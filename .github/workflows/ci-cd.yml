@@ -49,8 +49,9 @@ jobs:
       with:
         version: 'v1.18.0'
 
-    - name: Decode and set up Kubeconfig
+    - name: Create .kube directory and set up Kubeconfig
       run: |
+        mkdir -p $HOME/.kube
         echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
         kubectl config use-context minikube
 
