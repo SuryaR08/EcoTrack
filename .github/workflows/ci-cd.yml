@@ -48,16 +48,16 @@ jobs:
       - name: Install cri-dockerd
         run: |
           sudo apt-get install -y golang-go
-          wget https://github.com/Mirantis/cri-dockerd/releases/download/v1.0.0/cri-dockerd-v1.0.0.amd64.tgz
-          tar zxf cri-dockerd-v1.0.0.amd64.tgz
-          sudo cp cri-dockerd/cri-dockerd /usr/local/bin/cri-dockerd
-          wget https://raw.githubusercontent.com/Mirantis/cri-dockerd/v1.0.0/packaging/systemd/cri-docker.service
-          wget https://raw.githubusercontent.com/Mirantis/cri-dockerd/v1.0.0/packaging/systemd/cri-docker.socket
-          sudo cp cri-docker.service cri-docker.socket /etc/systemd/system/
+          wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.2.0/cri-dockerd-v0.2.0-linux-amd64.tar.gz
+          tar xvf cri-dockerd-v0.2.0-linux-amd64.tar.gz
+          sudo mv ./cri-dockerd /usr/local/bin/ 
+          wget https://raw.githubusercontent.com/Mirantis/cri-dockerd/master/packaging/systemd/cri-docker.service
+          wget https://raw.githubusercontent.com/Mirantis/cri-dockerd/master/packaging/systemd/cri-docker.socket
+          sudo mv cri-docker.socket cri-docker.service /etc/systemd/system/
           sudo sed -i -e 's,/usr/bin/cri-dockerd,/usr/local/bin/cri-dockerd,' /etc/systemd/system/cri-docker.service
-          sudo systemctl daemon-reload
-          sudo systemctl enable cri-docker.service
-          sudo systemctl enable --now cri-docker.socket
+          systemctl daemon-reload
+          systemctl enable cri-docker.service
+          systemctl enable --now cri-docker.socket
 
       - name: Install Minikube
         run: |
