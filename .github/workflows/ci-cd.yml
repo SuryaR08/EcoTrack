@@ -49,9 +49,9 @@ jobs:
       with:
         version: 'v1.18.0'
 
-    - name: Set up Kubeconfig
+    - name: Decode and set up Kubeconfig
       run: |
-        echo ${{ secrets.KUBECONFIG }} | base64 --decode > $HOME/.kube/config
+        echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
         kubectl config use-context minikube
 
     - name: Deploy to Kubernetes
