@@ -12,15 +12,6 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-    services:
-      docker:
-        image: docker:19.03.12
-        options: --privileged
-        ports:
-          - 2375:2375
-        env:
-          DOCKER_TLS_CERTDIR: ""
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -43,6 +34,12 @@ jobs:
       run: |
         docker build -t surya080903/ecotrack-server:latest -f ./server/Dockerfile ./server
         docker push surya080903/ecotrack-server:latest
+
+    - name: Set up Minikube
+      run: |
+        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        sudo install minikube-linux-amd64 /usr/local/bin/minikube
+        minikube start --driver=none
 
     - name: Set up Kubectl
       uses: azure/setup-kubectl@v1
