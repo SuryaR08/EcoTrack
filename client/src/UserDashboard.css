@@ -1,0 +1,70 @@
+.dashboard {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.dashboard h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.dashboard-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-option {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-option:hover {
+  color: white;
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.analytics {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.analytics:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.additional-content {
+  background-color: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.additional-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.additional-content h3 {
+  align-items: center;
+  text-align: center;
+  margin-top: 0;
+}
+
+.additional-content p {
+  margin-bottom: 1rem;
+}

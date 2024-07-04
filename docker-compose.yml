@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./client
+    container_name: react-ui
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - mern-network
+
+  backend:
+    build: ./server
+    container_name: node-api
+    ports:
+      - "3001:3001"
+    environment:
+      - DB_HOST=monorail.proxy.rlwy.net
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=BEqXbyPSdsXOIzERjDZFAxcuCMyHhEAJ
+      - DB_NAME=railway
+    networks:
+      - mern-network
+
+networks:
+  mern-network:
+    driver: bridge

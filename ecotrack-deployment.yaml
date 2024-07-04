@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecotrack
+spec:
+  replicas: 3  
+  selector:
+    matchLabels:
+      app: ecotrack
+  template:
+    metadata:
+      labels:
+        app: ecotrack
+    spec:
+      containers:
+      - name: ecotrack
+        image: surya080903/ecotrack:latest 
+        ports:
+        - containerPort: 3000
