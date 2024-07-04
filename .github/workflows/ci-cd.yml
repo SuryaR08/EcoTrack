@@ -1,0 +1,58 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    services:
+      docker:
+        image: docker:19.03.12
+        options: --privileged
+        ports:
+          - 2375:2375
+        env:
+          DOCKER_TLS_CERTDIR: ""
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and push client image
+      run: |
+        docker build -t surya080903/ecotrack-client:latest -f ./client/Dockerfile ./client
+        docker push surya080903/ecotrack-client:latest
+
+    - name: Build and push server image
+      run: |
+        docker build -t surya080903/ecotrack-server:latest -f ./server/Dockerfile ./server
+        docker push surya080903/ecotrack-server:latest
+
+    - name: Set up Kubectl
+      uses: azure/setup-kubectl@v1
+      with:
+        version: 'v1.18.0'
+
+    - name: Set up Kubeconfig
+      run: echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+
+    - name: Deploy to Kubernetes
+      run: |
+        kubectl apply -f ecotrack-deployment.yaml
+        kubectl apply -f ecotrack-service.yaml
