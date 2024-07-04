@@ -51,6 +51,8 @@ jobs:
         sudo apt-get install -y golang-go
         git clone https://github.com/Mirantis/cri-dockerd.git
         cd cri-dockerd
+        # Update go.mod to fix the Go version
+        sed -i 's/go 1.22.0/go 1.18/g' go.mod
         mkdir bin
         go get && go build -o bin/cri-dockerd
         sudo mkdir -p /usr/local/bin
