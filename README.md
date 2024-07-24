@@ -140,12 +140,9 @@ Contributions are what make the open-source community such an amazing place to l
 4. **Push to the Branch** (`git push origin feature/AmazingFeature`)
 5. **Open a Pull Request**
 
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [suryaraja8903@gmail.com](mailto:suryaraja8903@gmail.com)
+[suryaraja8903@gmail.com](mailto:suryaraja8903@gmail.com)
 
 Project Link: [https://eco-track-beige.vercel.app/](https://eco-track-beige.vercel.app/)
